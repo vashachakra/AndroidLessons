@@ -13,7 +13,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    
+
+     public void onClickNewActivity(View view) {
+       Intent intent = new Intent(this, SecondActivity.class);
+       intent.putExtra("key", "MIREA - КАШИНА АНАСТАСИЯ СЕРГЕЕВНА");
+       startActivity(intent);
+   }
     @Override
     protected void onPause() {
         super.onPause();
@@ -25,6 +30,4 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i("MainActivity", "OnDestroy");
     }
-
-
 }

@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -16,6 +17,7 @@ import androidx.navigation.ui.NavigationUI;
 import ru.mirea.kashina.multiactivity.databinding.ActivitySecondBinding;
 
 public class SecondActivity extends AppCompatActivity {
+    private TextView TextV;
 
     private AppBarConfiguration appBarConfiguration;
     private ActivitySecondBinding binding;
@@ -32,6 +34,11 @@ public class SecondActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_second);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+
+        TextV = findViewById(R.id.textview_first);
+        String text = (String) getIntent().getSerializableExtra("key");
+        TextV.setText(text);
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
