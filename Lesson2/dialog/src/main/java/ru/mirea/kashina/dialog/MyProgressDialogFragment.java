@@ -7,7 +7,6 @@ import androidx.fragment.app.DialogFragment;
 
 public class MyProgressDialogFragment  extends DialogFragment {
      private ProgressDialog progressDialog;
-
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
          progressDialog = new ProgressDialog(getActivity());

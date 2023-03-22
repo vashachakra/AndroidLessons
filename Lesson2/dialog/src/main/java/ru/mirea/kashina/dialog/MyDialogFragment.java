@@ -16,8 +16,7 @@ public class MyDialogFragment extends DialogFragment {
                 .setMessage("Успех близок?")
                 .setIcon(R.mipmap.ic_launcher_round)
                 .setPositiveButton("Иду дальше", (dialog, id) -> {
-                    // Закрываем окно
-                    ((MainActivity)getActivity()).onOkClicked();
+                    ((MainActivity)getActivity()).onContinue();
                     dialog.cancel();
                 })
                 .setNeutralButton("На паузе",
