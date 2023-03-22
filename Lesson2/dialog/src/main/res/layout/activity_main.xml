@@ -6,13 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TableLayout
+        android:layout_width="409dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="32dp"
+        android:stretchColumns="0, 1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/alertDialog"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:onClick="onClickShowDialog"
+                android:text="AlertDialog" />
+
+            <Button
+                android:id="@+id/dateDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onDateDialog"
+                android:text="DateDialog" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/progressDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onProgressDialog"
+                android:text="ProgressDialog" />
+
+            <Button
+                android:id="@+id/timeDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onTimeDialog"
+                android:text="TimeDialog" />
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
