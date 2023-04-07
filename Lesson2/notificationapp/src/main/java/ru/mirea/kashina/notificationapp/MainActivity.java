@@ -4,7 +4,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 import android.app.Notification;
@@ -20,7 +19,6 @@ import static android.Manifest.permission.POST_NOTIFICATIONS;
 
 public class MainActivity extends AppCompatActivity {
     private static final String CHANNEL_ID = "com.mirea.KashinaAS.notification.ANDROID";
-
     private int PermissionCode = 200;
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
