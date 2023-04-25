@@ -24,5 +24,6 @@
             android:id="@+id/webViewFragment"
             android:icon="@drawable/ic_launcher_browser_foreground"
             android:title="fragment_web_view" />
+
     </group>
 </menu>
