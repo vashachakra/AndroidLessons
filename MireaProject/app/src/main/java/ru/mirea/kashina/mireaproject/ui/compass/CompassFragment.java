@@ -1,4 +1,4 @@
-package ru.mirea.kashina.mireaproject;
+package ru.mirea.kashina.mireaproject.ui.compass;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -17,6 +17,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import ru.mirea.kashina.mireaproject.R;
 
 public class CompassFragment extends Fragment implements SensorEventListener {
 
@@ -78,7 +80,6 @@ public class CompassFragment extends Fragment implements SensorEventListener {
         compOrient.postInvalidate();
 
     }
-
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }

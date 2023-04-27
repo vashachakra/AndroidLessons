@@ -34,7 +34,7 @@
         tools:layout="@layout/fragment_web_view" />
     <fragment
         android:id="@+id/compassFragment"
-        android:name="ru.mirea.kashina.mireaproject.CompassFragment"
+        android:name="ru.mirea.kashina.mireaproject.ui.compass.CompassFragment"
         android:label="fragment_compass"
         tools:layout="@layout/fragment_compass" />
 </navigation>
