@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         Handler mainThreadHandler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
-
                 Log.d(MainActivity.class.getSimpleName(), "Task execute. This is result: " + msg.getData().getString("result"));
 
             }

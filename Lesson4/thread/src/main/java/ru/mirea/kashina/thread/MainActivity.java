@@ -29,19 +29,18 @@ public class MainActivity extends AppCompatActivity {
         Runnable runnable = new Runnable() {
             public void run() {
                 int numberThread = counter++;
-                Log.i("ThreadProject", "Запущен поток № " + numberThread);
-                long endTime = System.currentTimeMillis()
-                        + 20 * 1000;
+                Log.d("ThreadProject", String.format("Запущен поток No %d студентом группы БСБО-17-20 номер по списку No 9 ", numberThread, "БСБО-17-20", -1));
+                long endTime = System.currentTimeMillis() + 20 * 1000;
                 while (System.currentTimeMillis() < endTime) {
                     synchronized (this) {
                         try {
-                            wait(endTime -
-                                    System.currentTimeMillis());
+                            wait(endTime - System.currentTimeMillis());
+                            Log.d(MainActivity.class.getSimpleName(), "Endtime: " + endTime);
                         } catch (Exception e) {
                         }
+                        Log.d("ThreadProject", "Выполнен поток No " + numberThread);
                     }
                 }
-                Log.i("ThreadProject", "Выполнен поток № " + numberThread);
             }
         };
         Thread thread = new Thread(runnable);

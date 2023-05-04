@@ -16,7 +16,6 @@ public class MyLooper extends Thread {
         mainHandler = mainThreadHandler;
     }
 
-    private int number = 0;
 
     @SuppressLint("HandlerLeak")
     @Override

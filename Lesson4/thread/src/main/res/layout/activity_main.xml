@@ -26,7 +26,7 @@
         android:layout_marginEnd="159dp"
         android:layout_marginRight="159dp"
         android:onClick="onClick"
-        android:text="Thread wait"
+        android:text="Thread"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
