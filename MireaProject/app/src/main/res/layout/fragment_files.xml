@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FilesFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_convert_jpg"
+            android:layout_width="213dp"
+            android:layout_height="74dp"
+            android:layout_below="@id/btn_select_jpg"
+            android:layout_marginBottom="372dp"
+            android:text="Конвертировать"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_select_jpg"
+            android:layout_width="408dp"
+            android:layout_height="42dp"
+            android:layout_below="@id/btn_select_jpg"
+            android:layout_marginBottom="236dp"
+            android:text="Выбрать файл JPG"
+            app:layout_constraintBottom_toTopOf="@+id/btn_convert_jpg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Кнопка для выбора файла PNG -->
+
+    <!-- Кнопка для конвертации файла -->
+
+</FrameLayout>

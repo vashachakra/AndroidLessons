@@ -37,4 +37,9 @@
         android:name="ru.mirea.kashina.mireaproject.ui.compass.CompassFragment"
         android:label="fragment_compass"
         tools:layout="@layout/fragment_compass" />
+    <fragment
+        android:id="@+id/filesFragment"
+        android:name="ru.mirea.kashina.mireaproject.FilesFragment"
+        android:label="fragment_files"
+        tools:layout="@layout/fragment_files" />
 </navigation>

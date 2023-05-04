@@ -30,5 +30,10 @@
             android:icon="@drawable/ic_launcher_compass_foreground"
             android:title="fragment_compass" />
 
+        <item
+            android:id="@+id/filesFragment"
+            android:icon="@drawable/ic_launcher_file_foreground"
+            android:title="fragment_file" />
+
     </group>
 </menu>
