@@ -75,7 +75,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            app:constraint_referenced_ids="fieldEmail, fieldPassword"/>
+            app:constraint_referenced_ids="fieldEmail, fieldPassword"
+            tools:layout_editor_absoluteY="16dp" />
 
         <Button
             android:id="@+id/emailSignInButton"
@@ -104,27 +105,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            app:constraint_referenced_ids="emailCreateAccountButton, emailSignInButton" />
-
-        <Button
-            android:id="@+id/signOutButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_out"
-            app:layout_constraintBottom_toBottomOf="@+id/verifyEmailButton"
-            app:layout_constraintEnd_toStartOf="@+id/verifyEmailButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/verifyEmailButton" />
-
-        <Button
-            android:id="@+id/verifyEmailButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/verify_email"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/emailSignInButton" />
-
+            app:constraint_referenced_ids="emailCreateAccountButton, emailSignInButton"
+            tools:layout_editor_absoluteY="16dp" />
 
 
         <androidx.constraintlayout.widget.Group
@@ -132,6 +114,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:constraint_referenced_ids="signOutButton, verifyEmailButton" />
+            tools:layout_editor_absoluteY="16dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
