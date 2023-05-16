@@ -30,7 +30,6 @@ public class Authentication extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = AuthenticationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         mAuth = FirebaseAuth.getInstance();
 
         binding.emailSignInButton.setOnClickListener(new View.OnClickListener() {
@@ -49,18 +48,7 @@ public class Authentication extends AppCompatActivity {
                 createAccount(email, password);
             }
         });
-        binding.signOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signOut();
-            }
-        });
-        binding.verifyEmailButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendEmailVerification();
-            }
-        });
+
     }
 
     @Override
@@ -126,34 +114,8 @@ public class Authentication extends AppCompatActivity {
         updateUI(null);
     }
 
-    private void sendEmailVerification() {
-        // Disable button
-        binding.verifyEmailButton.setEnabled(false);
-
-        // Send verification email
-        final FirebaseUser user = mAuth.getCurrentUser();
-        user.sendEmailVerification()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-
-                        if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(),
-                                    "Verification email sent to " + user.getEmail(),
-                                    Toast.LENGTH_SHORT).show();
-                        } else {
-                            Log.e(TAG, "sendEmailVerification", task.getException());
-                            Toast.makeText(getApplicationContext(),
-                                    "Failed to send verification email.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
-
     private boolean validateForm() {
         boolean valid = true;
-
         String email = binding.fieldEmail.getText().toString();
         if (TextUtils.isEmpty(email)) {
             binding.fieldEmail.setError("Required.");
@@ -179,7 +141,6 @@ public class Authentication extends AppCompatActivity {
             binding.emailPasswordButtons.setVisibility(View.GONE);
             binding.emailPasswordFields.setVisibility(View.GONE);
             binding.signedInButtons.setVisibility(View.VISIBLE);
-            binding.verifyEmailButton.setEnabled(!user.isEmailVerified());
             Intent intent = new Intent(Authentication.this, MainActivity.class);
             startActivity(intent);
         } else {
@@ -191,4 +152,3 @@ public class Authentication extends AppCompatActivity {
         }
     }
 }
-
