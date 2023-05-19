@@ -42,4 +42,19 @@
         android:name="ru.mirea.kashina.mireaproject.FilesFragment"
         android:label="fragment_files"
         tools:layout="@layout/fragment_files" />
+    <fragment
+        android:id="@+id/audioFragment"
+        android:name="ru.mirea.kashina.mireaproject.ui.record.AudioFragment"
+        android:label="fragment_audio"
+        tools:layout="@layout/fragment_audio" />
+    <fragment
+        android:id="@+id/saveFileFragment"
+        android:name="ru.mirea.kashina.mireaproject.SaveFileFragment"
+        android:label="fragment_save_file"
+        tools:layout="@layout/fragment_save_file" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="ru.mirea.kashina.mireaproject.ui.map.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
 </navigation>
