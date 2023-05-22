@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         AppDatabase db = App.getInstance().getDatabase();
         SuperHeroDao superHeroDao = db.superHeroDao();
+
         SuperHero superHero = new SuperHero();
         superHero.id = 1;
         superHero.name = "Spider-Man";
