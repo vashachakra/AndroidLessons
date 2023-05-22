@@ -1,11 +1,13 @@
 package ru.mirea.kashina.mireaproject.ui.map;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -41,27 +43,63 @@ import com.yandex.runtime.network.RemoteError;
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.mirea.kashina.mireaproject.OpenMapActivity;
 import ru.mirea.kashina.mireaproject.R;
 import ru.mirea.kashina.mireaproject.databinding.FragmentMapBinding;
 
+public class MapFragment extends Fragment implements View.OnClickListener{
+        private static final String ARG_PARAM1 = "param1";
+        private static final String ARG_PARAM2 = "param2";
+        private String mParam1;
+        private String mParam2;
+        public MapFragment() {
+            // Required empty public constructor
+        }
 
-public class MapFragment extends Fragment implements DrivingSession.DrivingRouteListener, GeoObjectTapListener, InputListener {
-    private FragmentMapBinding binding;
-    private final String MAPKIT_API_KEY = "bf69f1aa-c134-4d5d-bc3e-2a450ef4ef02";
-    private final Point ROUTE_START_LOCATION = new Point(55.584777, 37.903695);
-    private final Point ROUTE_END_LOCATION = new Point(55.769008, 37.644612);
-    private final Point SCREEN_CENTER = new Point(
-            (ROUTE_START_LOCATION.getLatitude() + ROUTE_END_LOCATION.getLatitude()) / 2,
-            (ROUTE_START_LOCATION.getLongitude() + ROUTE_END_LOCATION.getLongitude()) /
-                    2);
-    private MapView mapView;
-    private MapObjectCollection mapObjects;
-    private DrivingRouter drivingRouter;
-    private DrivingSession drivingSession;
-    private int[] colors = {0xFFFF0000, 0xFF00FF00, 0x00FFBBBB, 0xFF0000FF};
+        public static MapFragment newInstance(String param1, String param2) {
+            MapFragment fragment = new MapFragment();
+            Bundle args = new Bundle();
+            args.putString(ARG_PARAM1, param1);
+            args.putString(ARG_PARAM2, param2);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            if (getArguments() != null) {
+                mParam1 = getArguments().getString(ARG_PARAM1);
+                mParam2 = getArguments().getString(ARG_PARAM2);
+            }
+        }
+        @Override
+        public void onStop(){
+            super.onStop();
+        }
+        @Override
+        public void onStart(){
+            super.onStart();
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View root = inflater.inflate(R.layout.fragment_map, container, false);
+            Button openMapButton = root.findViewById(R.id.button2);
+            openMapButton.setOnClickListener(this);
+            return root;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getActivity(), OpenMapActivity.class);
+            startActivity(intent);
+        }
+    }
 
 
-    @Override
+/*    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -176,4 +214,4 @@ public class MapFragment extends Fragment implements DrivingSession.DrivingRoute
             return true;
         });
     }
-}
+}*/
