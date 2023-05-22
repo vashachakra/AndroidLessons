@@ -59,10 +59,8 @@ public class MainActivity extends AppCompatActivity implements DrivingSession.Dr
                 setContentView(R.layout.activity_main);
                 mapView = (MapView) findViewById(R.id.mapview);
                 mapView.getMap().setRotateGesturesEnabled(false);
-        // Устанавливаем начальную точку и масштаб
                 mapView.getMap().move(new CameraPosition(
                         SCREEN_CENTER, 10, 0, 0));
-// Ининциализируем объект для создания маршрута водителя
                 drivingRouter = DirectionsFactory.getInstance().createDrivingRouter();
                 mapObjects = mapView.getMap().getMapObjects().addCollection();
                 submitRequest();
@@ -70,17 +68,14 @@ public class MainActivity extends AppCompatActivity implements DrivingSession.Dr
         private void submitRequest() {
                 DrivingOptions drivingOptions = new DrivingOptions();
                 VehicleOptions vehicleOptions = new VehicleOptions();
-// Кол-во альтернативных путей
                 drivingOptions.setRoutesCount(4);
                 ArrayList<RequestPoint> requestPoints = new ArrayList<>();
-// Устанавка точек маршрута
                 requestPoints.add(new RequestPoint(ROUTE_START_LOCATION,
                         RequestPointType.WAYPOINT,
                         null));
                 requestPoints.add(new RequestPoint(ROUTE_END_LOCATION,
                         RequestPointType.WAYPOINT,
                         null));
-// Отправка запроса на сервер
                 drivingSession = drivingRouter.requestRoutes(requestPoints, drivingOptions,
                         vehicleOptions, this);
         }
@@ -100,13 +95,10 @@ public class MainActivity extends AppCompatActivity implements DrivingSession.Dr
         public void onDrivingRoutes(@NonNull List<DrivingRoute> list) {
                 int color;
                 for (int i = 0; i < list.size(); i++) {
-// настроиваем цвета для каждого маршрута
                         color = colors[i];
-// добавляем маршрут на карту
                         mapObjects.addPolyline(list.get(i).getGeometry()).setStrokeColor(color);
                 }
         }
-
         @Override
         public void onDrivingRoutesError(@NonNull Error error) {
                 String errorMessage = getString(R.string.unknown_error_message);

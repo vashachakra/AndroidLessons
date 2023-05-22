@@ -1,7 +1,6 @@
 package ru.mirea.kashina.yandexmaps;
 
 import android.app.Application;
-
 import com.yandex.mapkit.MapKitFactory;
 
 public class App  extends Application {
@@ -9,7 +8,6 @@ public class App  extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-// Set the api key before calling initialize on MapKitFactory.
         MapKitFactory.setApiKey(MAPKIT_API_KEY);
     }
 }

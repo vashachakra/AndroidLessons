@@ -33,14 +33,10 @@ import ru.mirea.kashina.yandexmaps.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements UserLocationObjectListener {
     private final String MAPKIT_API_KEY = "bf69f1aa-c134-4d5d-bc3e-2a450ef4ef02";
-
     private final Point TARGET_LOCATION = new Point(59.945933, 97.820);
     private MapView mapView;
     private static final int PERMISSIONS_REQUEST_FINE_LOCATION = 10;
     private UserLocationLayer userLocationLayer;
-    private final int RESULT_NUMBER_LIMIT = 5;
-    private EditText searchEdit;
-    private SearchManager searchManager;
 
     private ActivityMainBinding binding;
 
@@ -84,10 +80,8 @@ public class MainActivity extends AppCompatActivity implements UserLocationObjec
                         (float) (mapView.getHeight() * 0.5)),
                 new PointF((float) (mapView.getWidth() * 0.5),
                         (float) (mapView.getHeight() * 0.83)));
-// При определении направления движения устанавливается следующая иконка
         userLocationView.getArrow().setIcon(ImageProvider.fromResource(
                 this, android.R.drawable.arrow_up_float));
-// При получении координат местоположения устанавливается следующая иконка
         CompositeIcon pinIcon = userLocationView.getPin().useCompositeIcon();
         pinIcon.setIcon(
                 "pin",
@@ -132,60 +126,3 @@ public class MainActivity extends AppCompatActivity implements UserLocationObjec
         }
     }
 }
-/*public class MainActivity extends AppCompatActivity {
-     /**
-      * Замените "your_api_key" валидным API-ключом.
-      * Ключ можно получить на сайте https://developer.tech.yandex.ru/
-      */
-/*
-     private final String MAPKIT_API_KEY = "bf69f1aa-c134-4d5d-bc3e-2a450ef4ef02";
-     private final Point TARGET_LOCATION = new Point(59.945933, 30.320045);
-
-     private MapView mapView;
-
-     @Override
-     protected void onCreate(Bundle savedInstanceState) {
-         */
-/**
-          * Задайте API-ключ перед инициализацией MapKitFactory.
-          * Рекомендуется устанавливать ключ в методе Application.onCreate(),
-          * но в данном примере он устанавливается в Activity.
-          *//*
-
-         MapKitFactory.setApiKey(MAPKIT_API_KEY);
-         */
-/**
-          * Инициализация библиотеки для загрузки необходимых нативных библиотек.
-          * Рекомендуется инициализировать библиотеку MapKit в методе Activity.onCreate()
-          * Инициализация в методе Application.onCreate() может привести к лишним вызовам и увеличенному использованию батареи.
-          *//*
-
-         MapKitFactory.initialize(this);
-         // Создание MapView.
-         setContentView(R.layout.activity_main);
-         super.onCreate(savedInstanceState);
-         mapView = (MapView)findViewById(R.id.mapview);
-
-         // Перемещение камеры в центр Санкт-Петербурга.
-         mapView.getMap().move(
-                 new CameraPosition(TARGET_LOCATION, 14.0f, 0.0f, 0.0f),
-                 new Animation(Animation.Type.SMOOTH, 5),
-                 null);
-     }
-
-     @Override
-     protected void onStop() {
-         // Вызов onStop нужно передавать инстансам MapView и MapKit.
-         mapView.onStop();
-         MapKitFactory.getInstance().onStop();
-         super.onStop();
-     }
-
-     @Override
-     protected void onStart() {
-         // Вызов onStart нужно передавать инстансам MapView и MapKit.
-         super.onStart();
-         MapKitFactory.getInstance().onStart();
-         mapView.onStart();
-     }
- }*/
