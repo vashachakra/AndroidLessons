@@ -33,11 +33,9 @@ import ru.mirea.kashina.yandexmaps.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements UserLocationObjectListener {
     private final String MAPKIT_API_KEY = "bf69f1aa-c134-4d5d-bc3e-2a450ef4ef02";
-    private final Point TARGET_LOCATION = new Point(59.945933, 97.820);
     private MapView mapView;
     private static final int PERMISSIONS_REQUEST_FINE_LOCATION = 10;
     private UserLocationLayer userLocationLayer;
-
     private ActivityMainBinding binding;
 
     @Override
@@ -47,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements UserLocationObjec
         MapKitFactory.initialize(this);
         SearchFactory.initialize(this);
         DirectionsFactory.initialize(this);
-        setContentView(R.layout.activity_main);
-        mapView = (MapView) findViewById(R.id.mapview);
-        mapView.getMap().move(new CameraPosition(TARGET_LOCATION, 0.0f, 0.0f, 0.0f), new Animation(Animation.Type.SMOOTH, 0), null);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        mapView = binding.mapview;
         mapView.getMap().move(
                 new CameraPosition(new Point(55.751574, 37.573856), 11.0f, 0.0f,
                         0.0f),

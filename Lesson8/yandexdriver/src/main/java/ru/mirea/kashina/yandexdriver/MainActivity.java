@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity implements DrivingSession.Dr
                 MapKitFactory.initialize(this);
                 SearchFactory.initialize(this);
                 DirectionsFactory.initialize(this);
-                setContentView(R.layout.activity_main);
+                binding = ActivityMainBinding.inflate(getLayoutInflater());
+                setContentView(binding.getRoot());
                 mapView = (MapView) findViewById(R.id.mapview);
                 mapView.getMap().setRotateGesturesEnabled(false);
                 mapView.getMap().move(new CameraPosition(
@@ -64,7 +65,18 @@ public class MainActivity extends AppCompatActivity implements DrivingSession.Dr
                 drivingRouter = DirectionsFactory.getInstance().createDrivingRouter();
                 mapObjects = mapView.getMap().getMapObjects().addCollection();
                 submitRequest();
-                }
+                PlacemarkMapObject marker = mapView.getMap().getMapObjects().addPlacemark(new
+                        Point(55.751574, 37.573856), ImageProvider.fromResource(this, R.drawable.ic_launcher_foreground));
+                marker.addTapListener(new MapObjectTapListener() {
+                        @Override
+                        public boolean onMapObjectTap(@NonNull MapObject mapObject, @NonNull Point
+                                point) {
+                                Toast.makeText(getApplication(),"Marker click",
+                                        Toast.LENGTH_SHORT).show();
+                                return false;
+                        }
+                });
+        }
         private void submitRequest() {
                 DrivingOptions drivingOptions = new DrivingOptions();
                 VehicleOptions vehicleOptions = new VehicleOptions();

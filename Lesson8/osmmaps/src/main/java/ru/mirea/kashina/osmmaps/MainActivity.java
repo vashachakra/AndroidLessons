@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private MyLocationNewOverlay locationNewOverlay;
-    private Marker startMarker, endMarker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         mapView = binding.mapView;
         mapView.setZoomRounding(true);
         mapView.setMultiTouchControls(true);
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         mapController.setCenter(startPoint);
 
         locationNewOverlay = new MyLocationNewOverlay(new
-                GpsMyLocationProvider(getApplicationContext()),mapView);
+                GpsMyLocationProvider(getApplicationContext()), mapView);
         locationNewOverlay.enableMyLocation();
         mapView.getOverlays().add(this.locationNewOverlay);
 
@@ -72,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         marker.setPosition(new GeoPoint(55.794229, 37.700772));
         marker.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
             public boolean onMarkerClick(Marker marker, MapView mapView) {
-                Toast.makeText(getApplicationContext(),"MIREA!",
+                Toast.makeText(getApplicationContext(), "MIREA!",
                         Toast.LENGTH_SHORT).show();
                 return true;
             }
@@ -80,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         mapView.getOverlays().add(marker);
 
         marker.setIcon(ResourcesCompat.getDrawable(getResources(), org.osmdroid.library.R.drawable.osm_ic_follow_me_on, null));
+        marker.setTitle("Title");
 
 
         Marker marker1 = new Marker(mapView);
