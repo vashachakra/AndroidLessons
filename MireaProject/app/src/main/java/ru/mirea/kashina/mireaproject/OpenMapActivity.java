@@ -2,23 +2,11 @@ package ru.mirea.kashina.mireaproject;
 
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-import com.yandex.mapkit.MapKit;
 import com.yandex.mapkit.MapKitFactory;
-import com.yandex.mapkit.directions.driving.DrivingRouter;
-import com.yandex.mapkit.directions.driving.DrivingSession;
 import com.yandex.mapkit.geometry.Point;
-import com.yandex.mapkit.map.MapObjectCollection;
 import com.yandex.mapkit.mapview.MapView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import ru.mirea.kashina.mireaproject.databinding.ActivityOpenMap2Binding;
 
@@ -42,7 +30,7 @@ public class OpenMapActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_map2);
-        mapView = findViewById(R.id.mapview);
+        mapView = findViewById(R.id.mapView);
     }
 
     @Override

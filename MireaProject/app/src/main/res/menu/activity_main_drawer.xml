@@ -49,5 +49,10 @@
             android:icon="@drawable/ic_launcher_map_foreground"
             android:title="fragment_map" />
 
+        <item
+            android:id="@+id/institutionFragment"
+            android:icon="@drawable/ic_launcher_map_foreground"
+            android:title="fragment_institution" />
+
     </group>
 </menu>
