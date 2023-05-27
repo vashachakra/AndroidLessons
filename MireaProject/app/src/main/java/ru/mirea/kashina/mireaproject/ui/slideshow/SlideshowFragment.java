@@ -4,34 +4,36 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
+import ru.mirea.kashina.mireaproject.R;
 import ru.mirea.kashina.mireaproject.databinding.FragmentSlideshowBinding;
 
 public class SlideshowFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private int[] images = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
+    private int currentIndex = 0;
+    private ImageView imageView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        imageView = root.findViewById(R.id.imageView2);
+        imageView.setOnClickListener(this::onClick);
+        updateImage();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
+    public void onClick(View v) {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    private void updateImage() {
+        imageView.setImageResource(images[currentIndex]);
     }
 }
