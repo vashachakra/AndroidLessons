@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements DrivingSession.Dr
                 mapObjects = mapView.getMap().getMapObjects().addCollection();
                 submitRequest();
                 PlacemarkMapObject marker = mapView.getMap().getMapObjects().addPlacemark(new
-                        Point(55.751574, 37.573856), ImageProvider.fromResource(this, R.drawable.icon_foreground));
+                        Point(55.769008, 37.644612), ImageProvider.fromResource(this, R.drawable.search));
                 marker.addTapListener(new MapObjectTapListener() {
                         @Override
                         public boolean onMapObjectTap(@NonNull MapObject mapObject, @NonNull Point
