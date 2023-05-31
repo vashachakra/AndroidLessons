@@ -1,10 +1,14 @@
 package ru.mirea.kashina.mireaproject;
 
+import android.graphics.PointF;
 import android.os.Bundle;
 
 import com.yandex.mapkit.MapKitFactory;
 import com.yandex.mapkit.geometry.Point;
+import com.yandex.mapkit.map.Map;
+import com.yandex.mapkit.map.PlacemarkMapObject;
 import com.yandex.mapkit.mapview.MapView;
+import com.yandex.runtime.image.ImageProvider;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,6 +35,23 @@ public class OpenMapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_map2);
         mapView = findViewById(R.id.mapView);
+        Map map = mapView.getMap();
+
+
+        PlacemarkMapObject vhMarker = map.getMapObjects().addPlacemark(new Point(55.759714, 37.647181));
+        vhMarker.setIcon(ImageProvider.fromResource(this,  org.osmdroid.library.R.drawable.osm_ic_follow_me_on));
+        vhMarker.setText("Хачапури и вино");
+
+
+        PlacemarkMapObject redSquareMarker = map.getMapObjects().addPlacemark(new Point(55.754340, 37.621187));
+        redSquareMarker.setIcon(ImageProvider.fromResource(this,  org.osmdroid.library.R.drawable.osm_ic_follow_me_on));
+        redSquareMarker.setText("RED SQUARE - ГУМ");
+
+        PlacemarkMapObject climbMarker = map.getMapObjects().addPlacemark(new Point(55.814431, 37.604726));
+        climbMarker.setIcon(ImageProvider.fromResource(this,  org.osmdroid.library.R.drawable.osm_ic_follow_me_on));
+        climbMarker.setText("Скалодром");
+
+
     }
 
     @Override

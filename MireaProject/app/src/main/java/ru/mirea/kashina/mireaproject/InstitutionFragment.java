@@ -28,6 +28,7 @@ import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
 import ru.mirea.kashina.mireaproject.databinding.FragmentInstitutionBinding;
 
+
 public class InstitutionFragment extends Fragment {
     private MapView mapView = null;
     private final String MAPKIT_API_KEY = "bf69f1aa-c134-4d5d-bc3e-2a450ef4ef02";
