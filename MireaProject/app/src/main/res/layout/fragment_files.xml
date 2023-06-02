@@ -14,21 +14,32 @@
 
         <Button
             android:id="@+id/btn_convert_jpg"
-            android:layout_width="213dp"
-            android:layout_height="74dp"
+            android:layout_width="412dp"
+            android:layout_height="43dp"
             android:layout_below="@id/btn_select_jpg"
-            android:layout_marginBottom="372dp"
+            android:layout_marginBottom="368dp"
+            android:alpha="0.7"
             android:text="Конвертировать"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <View
+            android:id="@+id/view3"
+            android:layout_width="410dp"
+            android:layout_height="730dp"
+            android:background="#7AEC9A "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/btn_select_jpg"
+            android:alpha="0.7"
             android:layout_width="408dp"
             android:layout_height="42dp"
             android:layout_below="@id/btn_select_jpg"
-            android:layout_marginBottom="236dp"
+            android:layout_marginBottom="124dp"
             android:text="Выбрать файл JPG"
             app:layout_constraintBottom_toTopOf="@+id/btn_convert_jpg"
             app:layout_constraintEnd_toEndOf="parent"

@@ -57,9 +57,5 @@
         android:name="ru.mirea.kashina.mireaproject.ui.map.MapFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" />
-    <fragment
-        android:id="@+id/institutionFragment"
-        android:name="ru.mirea.kashina.mireaproject.InstitutionFragment"
-        android:label="fragment_institution"
-        tools:layout="@layout/fragment_institution" />
+
 </navigation>

@@ -11,12 +11,18 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+
         <!-- Customize your theme here. -->
     </style>
 
     <style name="Theme.MireaProject.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Button.Yellow" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/yellow</item>
     </style>
 
     <style name="Theme.MireaProject.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

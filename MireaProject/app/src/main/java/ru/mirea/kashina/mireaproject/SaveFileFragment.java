@@ -1,5 +1,6 @@
 package ru.mirea.kashina.mireaproject;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -30,6 +31,8 @@ public class SaveFileFragment extends Fragment {
         quoteEditText = rootView.findViewById(R.id.quoteEditText);
 
         Button saveButton = rootView.findViewById(R.id.saveButton);
+        saveButton.setBackgroundColor(Color.WHITE);
+        saveButton.setTextColor(Color.BLACK);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

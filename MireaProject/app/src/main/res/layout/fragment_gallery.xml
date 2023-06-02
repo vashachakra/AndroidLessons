@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/flowers"
+
     tools:context=".ui.gallery.GalleryFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="703dp">
+        android:layout_width="393dp"
+        android:layout_height="538dp">
+
 
         <ImageView
             android:id="@+id/image_view"
@@ -28,11 +31,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="92dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="16dp"
+            android:alpha="0.5"
+            android:backgroundTint="#8A3434"
             android:text="Crop Image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.515"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/button" />
 
         <Button
@@ -40,7 +45,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="228dp"
+            android:layout_marginTop="52dp"
+            android:alpha="0.5"
+            android:backgroundTint="#8A3434"
             android:text="Take Picture"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image_view" />
